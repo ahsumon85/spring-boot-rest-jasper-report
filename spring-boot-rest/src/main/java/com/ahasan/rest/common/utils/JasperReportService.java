@@ -227,10 +227,8 @@ public class JasperReportService {
     public CustomJasperReport generaterJasperReportFinalization(List<?> listOfResponeEntityList, CustomJasperReport customJasperReportDto) {
 		List<JasperReportDto> listOfJasperReportDto = new ArrayList<>();
 		JasperReportDto jasperReportDto = new JasperReportDto();
-        jasperReportDto.setHospitalName( "Border Guard Hospital");
-        jasperReportDto.setHospitalAddress("Dhaka, Bangladesh");
-        jasperReportDto.setOthersInformation("Telemedicine, Call: 9999");
-        jasperReportDto.setResponeEntityList(listOfResponeEntityList);
+		jasperReportDto.setReportName("Employee Info List");
+        jasperReportDto.setResponseEntityList(listOfResponeEntityList);
         listOfJasperReportDto.add(jasperReportDto);
         
         Map<String, Object> parameterMap = new HashMap<String, Object>();

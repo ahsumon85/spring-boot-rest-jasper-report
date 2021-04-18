@@ -93,11 +93,10 @@ public class EmployeeService {
 	}
 
 	public CustomJasperReport generateUserReport(String searchTerm) {
-		Sort sort = Sort.by("auEntryAt").descending();
 		List<EmployeeDTO> listOfUserAccesse = findEmployeeList();
 		CustomJasperReport report = new CustomJasperReport();
         report.setOutputFilename("Employee Info Report");
-        report.setReportName("users");
+        report.setReportName("employee_report");
         report.setReportDir("/report/empl");
         return generaterJasperReportFinalization(listOfUserAccesse, report);
 	}
@@ -105,7 +104,7 @@ public class EmployeeService {
 	public CustomJasperReport generaterJasperReportFinalization(List<?> listOfResponeEntityList, CustomJasperReport customJasperReportDto) {
 		List<JasperReportDto> listOfJasperReportDto = new ArrayList<>();
 		JasperReportDto jasperReportDto = new JasperReportDto();
-        jasperReportDto.setResponeEntityList(listOfResponeEntityList);
+        jasperReportDto.setResponseEntityList(listOfResponeEntityList);
         listOfJasperReportDto.add(jasperReportDto);
         
         Map<String, Object> parameterMap = new HashMap<String, Object>();
